@@ -8,10 +8,12 @@
  
 
 /**
- * unknown declare
- * @param 
- * @param
- * @return
+ * module_load
+ * @param YR_SCAN_CONTEXT* context
+ * @param YR_OBJECT* module_object
+ * @param void* module_data
+ * @param size_t module_data_size
+ * @return ERROR_SUCCESS
  */
 signed int __cdecl sub_4EB690(int a1, int a2)
 {
@@ -109,6 +111,7 @@ signed int __cdecl sub_4EB690(int a1, int a2)
       v3 = sub_4EBE30(*(_DWORD *)v2, *(_DWORD *)(v2 + 4));
       if ( v3 )
       {
+        // Ignore DLLs while scanning a process
         if ( !(*(_BYTE *)(a1 + 16) & 2) || !(*(_WORD *)(v3 + 22) & 0x2000) ) // has to do with dll declare
           break;
       }
