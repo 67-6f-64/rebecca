@@ -8,19 +8,121 @@
 
 
 /**
+ * pe_parse_version_info
+ *
+ * @param PIMAGE_RESOURCE_DATA_ENTRY rsrc_data
+ * @param PE* pe
+ */
+// STR: "version_info[%s]", "VS_VERSION_INFO", "StringFileInfo"
+int __cdecl sub_4ECC70(_DWORD *a1, int a2)
+{
+  int v2; // esi@1
+  int result; // eax@1
+  int v4; // edi@2
+  unsigned int v5; // edx@2
+  unsigned int v6; // edx@5
+  char *v7; // ebx@5
+  char *v8; // edx@8
+  char *v9; // edi@9
+  int v10; // ebx@9
+  unsigned int v11; // esi@11
+  int v12; // eax@11
+  char *v13; // [sp+8h] [bp-14Ch]@8
+  char *v14; // [sp+Ch] [bp-148h]@8
+  char v15; // [sp+10h] [bp-144h]@11
+  char v16; // [sp+110h] [bp-44h]@11
+
+  v2 = a2;
+  result = sub_4ECE60(a2, *a1, 0);
+  if ( result )
+  {
+    v4 = *(_DWORD *)a2 + result;
+    v5 = *(_DWORD *)a2 + *(_DWORD *)(a2 + 4);
+    if ( v4 + 6 <= v5 )
+    {
+      result = v4 + 16;
+      if ( v4 + 16 <= v5 )
+      {
+        result = sub_4F4920(v4 + 6, "VS_VERSION_INFO");
+        if ( !result )
+        {
+          v6 = *(_DWORD *)(a2 + 4) + *(_DWORD *)a2;
+          v7 = (char *)(v4 + 92);
+          if ( v4 + 98 <= v6 )
+          {
+            result = v4 + 107;
+            if ( v4 + 107 <= v6 )
+            {
+              for ( result = sub_4F4920(v4 + 98, "StringFileInfo"); !result; result = sub_4F4920(
+                                                                                        v7 + 6,
+                                                                                        "StringFileInfo") )
+              {
+                v8 = v7 + 36;
+                v7 += (*(_WORD *)v7 + 3) & 0xFFFFFFFC;
+                v14 = v8;
+                v13 = v7;
+                if ( v8 < v7 )
+                {
+                  do
+                  {
+                    v9 = &v14[(2 * sub_4F4A60(v8 + 6) + 11) & 0xFFFFFFFC];
+                    v8 = &v14[(*(_WORD *)v14 + 3) & 0xFFFFFFFC];
+                    v10 = (int)(v9 + 6);
+                    v14 += (*(_WORD *)v14 + 3) & 0xFFFFFFFC;
+                    if ( (unsigned int)(v9 + 6) <= *(_DWORD *)(v2 + 4) + *(_DWORD *)v2 )
+                    {
+                      do
+                      {
+                        if ( v9 >= v8 )
+                          break;
+                        v11 = (unsigned int)&v9[(2 * sub_4F4A60(v10) + 11) & 0xFFFFFFFC];
+                        sub_4F4A10(&v16, v10, 64);
+                        sub_4F4A10(&v15, v11, 256);
+                        v2 = a2;
+                        sub_4E01F0(
+                          &v15,
+                          strlen(&v15),
+                          *(_DWORD *)(a2 + 12),
+                          (int)"version_info[%s]",
+                          (unsigned int)&v16);
+                        v12 = *(_WORD *)v9;
+                        v8 = v14;
+                        if ( !(_WORD)v12 )
+                          break;
+                        v9 += (v12 + 3) & 0xFFFFFFFC;
+                        v10 = (int)(v9 + 6);
+                      }
+                      while ( (unsigned int)(v9 + 6) <= *(_DWORD *)(a2 + 4) + *(_DWORD *)a2 );
+                    }
+                    v7 = v13;
+                  }
+                  while ( (unsigned int)(v8 + 6) <= *(_DWORD *)(v2 + 4) + *(_DWORD *)v2 && *(_WORD *)v8 && v8 < v13 );
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+  return result;
+}
+
+
+/**
  * _pe_iterate_resources
  *
- * @param PE* pe,
- * @param PIMAGE_RESOURCE_DIRECTORY resource_dir,
- * @param uint8_t* rsrc_data,
- * @param int rsrc_tree_level,
- * @param int* type,
- * @param int* id,
- * @param int* language,
- * @param uint8_t* type_string,
- * @param uint8_t* name_string,
- * @param uint8_t* lang_string,
- * @param RESOURCE_CALLBACK_FUNC callback,
+ * @param PE* pe
+ * @param PIMAGE_RESOURCE_DIRECTORY resource_dir
+ * @param uint8_t* rsrc_data
+ * @param int rsrc_tree_level
+ * @param int* type
+ * @param int* id
+ * @param int* language
+ * @param uint8_t* type_string
+ * @param uint8_t* name_string
+ * @param uint8_t* lang_string
+ * @param RESOURCE_CALLBACK_FUNC callback
  * @param void* callback_data
  * @return result or RESOURCE_ITERATOR_ABORTED
  */
