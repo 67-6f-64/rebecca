@@ -1,6 +1,6 @@
 /**
  * pe.c
- * https://github.com/VirusTotal/yara/blob/9a12a825846e1047916d03ec22f4768940dd95a0/libyara/modules/pe.c
+ * https://github.com/VirusTotal/yara/blob/master/libyara/modules/pe.c
  *  
  * @author five (i.f-ve@ya.ru)
  * @verison (2/20/2017)
