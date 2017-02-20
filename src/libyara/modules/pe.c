@@ -8,12 +8,101 @@
 
 
 /**
+ * pe_parse_rich_signature
+ *
+ * @param PE* pe
+ * @param size_t base_address
+ */
+char *__usercall sub_4ECB00@<eax>(char a1@<dil>, _DWORD *lpMem, int a3)
+{
+  _DWORD *v3; // ebx@1
+  char *result; // eax@1
+  _WORD *v5; // ecx@2
+  int v6; // edx@3
+  unsigned int v7; // edx@4
+  char *v8; // esi@5
+  unsigned int v9; // edi@5
+  char *v10; // esi@8
+  unsigned int v11; // esi@12
+  char *v12; // eax@13
+  char *i; // ecx@15
+  char v14; // ST30_1@17
+  char v15; // [sp-8h] [bp-10h]@5
+  char *v16; // [sp+4h] [bp-4h]@13
+  char *lpMema; // [sp+10h] [bp+8h]@12
+
+  v3 = lpMem;
+  result = (char *)lpMem[1];
+  if ( (unsigned int)result >= 0x40 )
+  {
+    v5 = (_WORD *)*lpMem;
+    if ( *(_WORD *)*lpMem == 23117 )
+    {
+      v6 = *((_DWORD *)v5 + 15);
+      if ( v6 >= 0 )
+      {
+        v7 = v6 + 24;
+        if ( (unsigned int)result >= v7 )
+        {
+          result = (char *)*((_DWORD *)v5 + 34);
+          v8 = (char *)*((_DWORD *)v5 + 33);
+          v15 = a1;
+          v9 = (unsigned int)(v5 + 64);
+          if ( v8 == result && result == *((char **)v5 + 35) )
+          {
+            result = (char *)((unsigned int)v8 ^ *(_DWORD *)v9);
+            if ( result == (char *)1399742788 )
+            {
+              result = (char *)v5 + v7;
+              v10 = (char *)(v5 + 64);
+              if ( v9 <= (unsigned int)v5 + v7 )
+              {
+                while ( *(_DWORD *)v10 != 1751345490 )
+                {
+                  v10 += 4;
+                  if ( v10 > result )
+                    return result;
+                }
+                v11 = (unsigned int)&v10[-v9] & 0xFFFFFFFC;
+                result = (char *)sub_4DDF80(v11);
+                lpMema = result;
+                if ( result )
+                {
+                  memmove_0(result, (const void *)v9, v11);
+                  sub_4E0180(a3 + 128, 0, v3[3], "rich_signature.offset");
+                  sub_4E0180(v11, 0, v3[3], "rich_signature.length");
+                  sub_4E0180(*(_DWORD *)(v9 + 4), 0, v3[3], "rich_signature.key");
+                  v12 = (char *)sub_4DDF80(v11);
+                  v16 = v12;
+                  if ( v12 )
+                  {
+                    memmove_0(v12, lpMema, v11);
+                    for ( i = v16; i < &v16[v11]; i += 4 )
+                      *(_DWORD *)i ^= *(_DWORD *)(v9 + 4);
+                    sub_4E01F0(lpMema, v11, v3[3], (int)"rich_signature.raw_data", v15);
+                    result = (char *)sub_4E01F0(v16, v11, v3[3], (int)"rich_signature.clear_data", v14);
+                  }
+                  else
+                  {
+                    result = (char *)sub_4DDF10(lpMema);
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+  return result;
+}
+
+/**
  * pe_parse_version_info
  *
  * @param PIMAGE_RESOURCE_DATA_ENTRY rsrc_data
  * @param PE* pe
  */
-// STR: "version_info[%s]", "VS_VERSION_INFO", "StringFileInfo"
 int __cdecl sub_4ECC70(_DWORD *a1, int a2)
 {
   int v2; // esi@1
