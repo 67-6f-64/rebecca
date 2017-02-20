@@ -8,7 +8,7 @@
 
 
 /**
- * define_function - looks like module.h #define return_type has been embeded
+ * define_function - looks like module.h #define return_type has been embeded on compile
  *
  * @param valid_on
  */
