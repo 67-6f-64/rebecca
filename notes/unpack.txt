@@ -2,6 +2,11 @@ A good way to check unpack of blackcipher is to do run bat with. Works with all 
 
 start blackcipher.aes /showinstance
 
+other commands are here: 
+https://i.imgur.com/6cZhVMa.png
+
+
+
 if (it shows then)
   winlic is there
 else if (error)
