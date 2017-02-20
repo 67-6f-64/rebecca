@@ -8,6 +8,30 @@
  
 
 /**
+ * 
+ */
+int __thiscall sub_4315A0(int this, size_t a2, char a3)
+{
+  size_t v4; // [sp+0h] [bp-8h]@4
+  int v5; // [sp+4h] [bp-4h]@1
+
+  v5 = this;
+  if ( -1 - *(_DWORD *)(this + 16) <= a2 )
+    sub_4FC42E("string too long");
+  if ( a2 )
+  {
+    v4 = a2 + *(_DWORD *)(this + 16);
+    if ( (unsigned __int8)sub_4064B0(a2 + *(_DWORD *)(this + 16), 0) )
+    {
+      sub_431660(*(_DWORD *)(v5 + 16), a2, a3);
+      sub_406580(v4);
+    }
+  }
+  return v5;
+}
+
+
+/**
  * yyparse 
  *
  * @param void *yyscanner
