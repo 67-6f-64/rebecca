@@ -8,6 +8,77 @@
 
 
 /**
+ * define_function - looks like module.h #define return_type has been embeded
+ *
+ * @param valid_on
+ */
+int __cdecl sub_4ED3C0(int a1, int a2, int a3)
+{
+  int v3; // esi@1
+  int v4; // ecx@1
+  int v5; // ebx@3
+  unsigned int v6; // edi@3
+  unsigned int v7; // eax@3
+  int v8; // ST00_4@3
+  int v9; // edx@3
+  signed __int64 v10; // rax@3
+  _BYTE *v11; // esi@3
+  int result; // eax@8
+  _BYTE *v13; // eax@10
+  int v14; // eax@13
+  signed int v15; // [sp-Ch] [bp-18h]@0
+  int v16; // [sp+4h] [bp-8h]@9
+  unsigned int v17; // [sp+8h] [bp-4h]@3
+  int v18; // [sp+1Ch] [bp+10h]@3
+
+  v3 = a3;
+  if ( sub_4DFFD0(*(_DWORD *)(a3 + 12), "not_before") || sub_4DFFD0(*(_DWORD *)(a3 + 12), "not_after") )
+  {
+    v13 = *(_BYTE **)(a3 + 16);
+    if ( *v13 == 1 )
+    {
+      sub_4E0180(-88417537, -345382, v13, 0);
+      return 0;
+    }
+LABEL_13:
+    v14 = sub_5A39F0(v4);
+    fprintf(
+      (FILE *)(v14 + 64),
+      "%s:%d: return type differs from function declaration\n",
+      "..\\..\\libyara\\modules\\pe.c",
+      v15);
+    abort();
+  }
+  v5 = *(_DWORD *)(a1 + 4);
+  v6 = *(_DWORD *)a1;
+  v7 = sub_4DFEE0(*(_DWORD *)(a3 + 12), "not_before");
+  v8 = *(_DWORD *)(a3 + 12);
+  v17 = v7;
+  v18 = v9;
+  LODWORD(v10) = sub_4DFEE0(v8, "not_after");
+  v11 = *(_BYTE **)(v3 + 16);
+  if ( *v11 != 1 )
+  {
+    v15 = 1293;
+    goto LABEL_13;
+  }
+  if ( v5 < v18 || v5 <= v18 && v6 < v17 || __PAIR__(v5, v6) > v10 )
+  {
+    _mm_storel_pd((double *)&v16, 0i64);
+    sub_4E0180(v16, v17, v11, 0);
+    result = 0;
+  }
+  else
+  {
+    sub_4E0180(1, 0, v11, 0);
+    result = 0;
+  }
+  return result;
+}
+
+
+
+/**
  * pe_parse_rich_signature
  *
  * @param PE* pe
