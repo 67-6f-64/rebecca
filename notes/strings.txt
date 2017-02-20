@@ -1,0 +1,23 @@
+location - skdi3
+0079C3C1
+
+restart - %userappdata%\RestartApp.exe
+0079D6ed
+
+looks like checksums are here
+0079002B
+
+code integ unmatched location - will see error on tamper detection
+0282DD78
+
+code integ unmatched location - ?? have yet to look into A5 14 A5 14 A5 14 A5 14 A5 14 A5 14 A5 14 A5 14 A5 14 A5 14 A5 14 A5 14
+00730300
+
+blackcipher config - written to 1 
+0282EBA0
+
+blackcipher config location
+0282EBC0
+
+ngclient.aes location
+0282EDC8
