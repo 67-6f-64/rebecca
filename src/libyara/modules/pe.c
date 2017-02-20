@@ -6,6 +6,980 @@
  * @verison (2/20/2017)
  */
  
+/**
+ * begin_declarations;
+ * creates structures
+ */
+int __cdecl sub_4EA440(int a1)
+{
+  int v1; // esi@1
+  int result; // eax@1
+  int v3; // edi@88
+  int v4; // eax@92
+  const char *v5; // ecx@92
+  bool v6; // cf@93
+  unsigned __int8 v7; // dl@95
+  int v8; // eax@97
+  int v9; // edi@101
+  int v10; // eax@105
+  bool v11; // cf@106
+  unsigned __int8 v12; // dl@108
+  int v13; // eax@110
+  int v14; // edi@115
+  int v15; // eax@119
+  bool v16; // cf@120
+  unsigned __int8 v17; // dl@122
+  int v18; // eax@124
+  int v19; // edi@129
+  int v20; // eax@133
+  bool v21; // cf@134
+  unsigned __int8 v22; // dl@136
+  int v23; // eax@138
+  int v24; // edi@145
+  int v25; // eax@153
+  bool v26; // cf@154
+  unsigned __int8 v27; // dl@156
+  int v28; // eax@158
+  int v29; // edi@163
+  int v30; // eax@170
+  bool v31; // cf@171
+  unsigned __int8 v32; // dl@173
+  int v33; // eax@175
+  int v34; // edi@188
+  int v35; // eax@192
+  bool v36; // cf@193
+  unsigned __int8 v37; // dl@195
+  int v38; // eax@197
+  int v39; // edi@203
+  int v40; // eax@213
+  bool v41; // cf@214
+  unsigned __int8 v42; // dl@216
+  int v43; // eax@218
+  int v44; // edi@225
+  int v45; // eax@235
+  bool v46; // cf@236
+  unsigned __int8 v47; // dl@238
+  int v48; // eax@240
+  int v49; // eax@247
+  signed int v50; // [sp-8h] [bp-10h]@113
+  int v51; // [sp+4h] [bp-4h]@144
+
+  v1 = a1;
+  result = sub_4DF770(1, "MACHINE_UNKNOWN", a1, 0);
+  if ( !result )
+  {
+    result = sub_4DF770(1, "MACHINE_AM33", v1, 0);
+    if ( !result )
+    {
+      result = sub_4DF770(1, "MACHINE_AMD64", v1, 0);
+      if ( !result )
+      {
+        result = sub_4DF770(1, "MACHINE_ARM", v1, 0);
+        if ( !result )
+        {
+          result = sub_4DF770(1, "MACHINE_ARMNT", v1, 0);
+          if ( !result )
+          {
+            result = sub_4DF770(1, "MACHINE_ARM64", v1, 0);
+            if ( !result )
+            {
+              result = sub_4DF770(1, "MACHINE_EBC", v1, 0);
+              if ( !result )
+              {
+                result = sub_4DF770(1, "MACHINE_I386", v1, 0);
+                if ( !result )
+                {
+                  result = sub_4DF770(1, "MACHINE_IA64", v1, 0);
+                  if ( !result )
+                  {
+                    result = sub_4DF770(1, "MACHINE_M32R", v1, 0);
+                    if ( !result )
+                    {
+                      result = sub_4DF770(1, "MACHINE_MIPS16", v1, 0);
+                      if ( !result )
+                      {
+                        result = sub_4DF770(1, "MACHINE_MIPSFPU", v1, 0);
+                        if ( !result )
+                        {
+                          result = sub_4DF770(1, "MACHINE_MIPSFPU16", v1, 0);
+                          if ( !result )
+                          {
+                            result = sub_4DF770(1, "MACHINE_POWERPC", v1, 0);
+                            if ( !result )
+                            {
+                              result = sub_4DF770(1, "MACHINE_POWERPCFP", v1, 0);
+                              if ( !result )
+                              {
+                                result = sub_4DF770(1, "MACHINE_R4000", v1, 0);
+                                if ( !result )
+                                {
+                                  result = sub_4DF770(1, "MACHINE_SH3", v1, 0);
+                                  if ( !result )
+                                  {
+                                    result = sub_4DF770(1, "MACHINE_SH3DSP", v1, 0);
+                                    if ( !result )
+                                    {
+                                      result = sub_4DF770(1, "MACHINE_SH4", v1, 0);
+                                      if ( !result )
+                                      {
+                                        result = sub_4DF770(1, "MACHINE_SH5", v1, 0);
+                                        if ( !result )
+                                        {
+                                          result = sub_4DF770(1, "MACHINE_THUMB", v1, 0);
+                                          if ( !result )
+                                          {
+                                            result = sub_4DF770(1, "MACHINE_WCEMIPSV2", v1, 0);
+                                            if ( !result )
+                                            {
+                                              result = sub_4DF770(1, "SUBSYSTEM_UNKNOWN", v1, 0);
+                                              if ( !result )
+                                              {
+                                                result = sub_4DF770(1, "SUBSYSTEM_NATIVE", v1, 0);
+                                                if ( !result )
+                                                {
+                                                  result = sub_4DF770(1, "SUBSYSTEM_WINDOWS_GUI", v1, 0);
+                                                  if ( !result )
+                                                  {
+                                                    result = sub_4DF770(1, "SUBSYSTEM_WINDOWS_CUI", v1, 0);
+                                                    if ( !result )
+                                                    {
+                                                      result = sub_4DF770(1, "SUBSYSTEM_OS2_CUI", v1, 0);
+                                                      if ( !result )
+                                                      {
+                                                        result = sub_4DF770(1, "SUBSYSTEM_POSIX_CUI", v1, 0);
+                                                        if ( !result )
+                                                        {
+                                                          result = sub_4DF770(1, "SUBSYSTEM_NATIVE_WINDOWS", v1, 0);
+                                                          if ( !result )
+                                                          {
+                                                            result = sub_4DF770(1, "RELOCS_STRIPPED", v1, 0);
+                                                            if ( !result )
+                                                            {
+                                                              result = sub_4DF770(1, "EXECUTABLE_IMAGE", v1, 0);
+                                                              if ( !result )
+                                                              {
+                                                                result = sub_4DF770(1, "LINE_NUMS_STRIPPED", v1, 0);
+                                                                if ( !result )
+                                                                {
+                                                                  result = sub_4DF770(1, "LOCAL_SYMS_STRIPPED", v1, 0);
+                                                                  if ( !result )
+                                                                  {
+                                                                    result = sub_4DF770(1, "AGGRESIVE_WS_TRIM", v1, 0);
+                                                                    if ( !result )
+                                                                    {
+                                                                      result = sub_4DF770(
+                                                                                 1,
+                                                                                 "LARGE_ADDRESS_AWARE",
+                                                                                 v1,
+                                                                                 0);
+                                                                      if ( !result )
+                                                                      {
+                                                                        result = sub_4DF770(
+                                                                                   1,
+                                                                                   "BYTES_REVERSED_LO",
+                                                                                   v1,
+                                                                                   0);
+                                                                        if ( !result )
+                                                                        {
+                                                                          result = sub_4DF770(1, "MACHINE_32BIT", v1, 0);
+                                                                          if ( !result )
+                                                                          {
+                                                                            result = sub_4DF770(
+                                                                                       1,
+                                                                                       "DEBUG_STRIPPED",
+                                                                                       v1,
+                                                                                       0);
+                                                                            if ( !result )
+                                                                            {
+                                                                              result = sub_4DF770(
+                                                                                         1,
+                                                                                         "REMOVABLE_RUN_FROM_SWAP",
+                                                                                         v1,
+                                                                                         0);
+                                                                              if ( !result )
+                                                                              {
+                                                                                result = sub_4DF770(
+                                                                                           1,
+                                                                                           "NET_RUN_FROM_SWAP",
+                                                                                           v1,
+                                                                                           0);
+                                                                                if ( !result )
+                                                                                {
+                                                                                  result = sub_4DF770(
+                                                                                             1,
+                                                                                             "SYSTEM",
+                                                                                             v1,
+                                                                                             0);
+                                                                                  if ( !result )
+                                                                                  {
+                                                                                    result = sub_4DF770(
+                                                                                               1,
+                                                                                               &off_6589AC,
+                                                                                               v1,
+                                                                                               0);
+                                                                                    if ( !result )
+                                                                                    {
+                                                                                      result = sub_4DF770(
+                                                                                                 1,
+                                                                                                 "UP_SYSTEM_ONLY",
+                                                                                                 v1,
+                                                                                                 0);
+                                                                                      if ( !result )
+                                                                                      {
+                                                                                        result = sub_4DF770(
+                                                                                                   1,
+                                                                                                   "BYTES_REVERSED_HI",
+                                                                                                   v1,
+                                                                                                   0);
+                                                                                        if ( !result )
+                                                                                        {
+                                                                                          result = sub_4DF770(
+                                                                                                     1,
+                                                                                                     "SECTION_CNT_CODE",
+                                                                                                     v1,
+                                                                                                     0);
+                                                                                          if ( !result )
+                                                                                          {
+                                                                                            result = sub_4DF770(1, "SECTION_CNT_INITIALIZED_DATA", v1, 0);
+                                                                                            if ( !result )
+                                                                                            {
+                                                                                              result = sub_4DF770(1, "SECTION_CNT_UNINITIALIZED_DATA", v1, 0);
+                                                                                              if ( !result )
+                                                                                              {
+                                                                                                result = sub_4DF770(1, "SECTION_GPREL", v1, 0);
+                                                                                                if ( !result )
+                                                                                                {
+                                                                                                  result = sub_4DF770(1, "SECTION_MEM_16BIT", v1, 0);
+                                                                                                  if ( !result )
+                                                                                                  {
+                                                                                                    result = sub_4DF770(1, "SECTION_LNK_NRELOC_OVFL", v1, 0);
+                                                                                                    if ( !result )
+                                                                                                    {
+                                                                                                      result = sub_4DF770(1, "SECTION_MEM_DISCARDABLE", v1, 0);
+                                                                                                      if ( !result )
+                                                                                                      {
+                                                                                                        result = sub_4DF770(1, "SECTION_MEM_NOT_CACHED", v1, 0);
+                                                                                                        if ( !result )
+                                                                                                        {
+                                                                                                          result = sub_4DF770(1, "SECTION_MEM_NOT_PAGED", v1, 0);
+                                                                                                          if ( !result )
+                                                                                                          {
+                                                                                                            result = sub_4DF770(1, "SECTION_MEM_SHARED", v1, 0);
+                                                                                                            if ( !result )
+                                                                                                            {
+                                                                                                              result = sub_4DF770(1, "SECTION_MEM_EXECUTE", v1, 0);
+                                                                                                              if ( !result )
+                                                                                                              {
+                                                                                                                result = sub_4DF770(1, "SECTION_MEM_READ", v1, 0);
+                                                                                                                if ( !result )
+                                                                                                                {
+                                                                                                                  result = sub_4DF770(1, "SECTION_MEM_WRITE", v1, 0);
+                                                                                                                  if ( !result )
+                                                                                                                  {
+                                                                                                                    result = sub_4DF770(1, "RESOURCE_TYPE_CURSOR", v1, 0);
+                                                                                                                    if ( !result )
+                                                                                                                    {
+                                                                                                                      result = sub_4DF770(1, "RESOURCE_TYPE_BITMAP", v1, 0);
+                                                                                                                      if ( !result )
+                                                                                                                      {
+                                                                                                                        result = sub_4DF770(1, "RESOURCE_TYPE_ICON", v1, 0);
+                                                                                                                        if ( !result )
+                                                                                                                        {
+                                                                                                                          result = sub_4DF770(1, "RESOURCE_TYPE_MENU", v1, 0);
+                                                                                                                          if ( !result )
+                                                                                                                          {
+                                                                                                                            result = sub_4DF770(1, "RESOURCE_TYPE_DIALOG", v1, 0);
+                                                                                                                            if ( !result )
+                                                                                                                            {
+                                                                                                                              result = sub_4DF770(1, "RESOURCE_TYPE_STRING", v1, 0);
+                                                                                                                              if ( !result )
+                                                                                                                              {
+                                                                                                                                result = sub_4DF770(1, "RESOURCE_TYPE_FONTDIR", v1, 0);
+                                                                                                                                if ( !result )
+                                                                                                                                {
+                                                                                                                                  result = sub_4DF770(1, "RESOURCE_TYPE_FONT", v1, 0);
+                                                                                                                                  if ( !result )
+                                                                                                                                  {
+                                                                                                                                    result = sub_4DF770(1, "RESOURCE_TYPE_ACCELERATOR", v1, 0);
+                                                                                                                                    if ( !result )
+                                                                                                                                    {
+                                                                                                                                      result = sub_4DF770(1, "RESOURCE_TYPE_RCDATA", v1, 0);
+                                                                                                                                      if ( !result )
+                                                                                                                                      {
+                                                                                                                                        result = sub_4DF770(1, "RESOURCE_TYPE_MESSAGETABLE", v1, 0);
+                                                                                                                                        if ( !result )
+                                                                                                                                        {
+                                                                                                                                          result = sub_4DF770(1, "RESOURCE_TYPE_GROUP_CURSOR", v1, 0);
+                                                                                                                                          if ( !result )
+                                                                                                                                          {
+                                                                                                                                            result = sub_4DF770(1, "RESOURCE_TYPE_GROUP_ICON", v1, 0);
+                                                                                                                                            if ( !result )
+                                                                                                                                            {
+                                                                                                                                              result = sub_4DF770(1, "RESOURCE_TYPE_VERSION", v1, 0);
+                                                                                                                                              if ( !result )
+                                                                                                                                              {
+                                                                                                                                                result = sub_4DF770(1, "RESOURCE_TYPE_DLGINCLUDE", v1, 0);
+                                                                                                                                                if ( !result )
+                                                                                                                                                {
+                                                                                                                                                  result = sub_4DF770(1, "RESOURCE_TYPE_PLUGPLAY", v1, 0);
+                                                                                                                                                  if ( !result )
+                                                                                                                                                  {
+                                                                                                                                                    result = sub_4DF770(1, "RESOURCE_TYPE_VXD", v1, 0);
+                                                                                                                                                    if ( !result )
+                                                                                                                                                    {
+                                                                                                                                                      result = sub_4DF770(1, "RESOURCE_TYPE_ANICURSOR", v1, 0);
+                                                                                                                                                      if ( !result )
+                                                                                                                                                      {
+                                                                                                                                                        result = sub_4DF770(1, "RESOURCE_TYPE_ANIICON", v1, 0);
+                                                                                                                                                        if ( !result )
+                                                                                                                                                        {
+                                                                                                                                                          result = sub_4DF770(1, "RESOURCE_TYPE_HTML", v1, 0);
+                                                                                                                                                          if ( !result )
+                                                                                                                                                          {
+                                                                                                                                                            result = sub_4DF770(1, "RESOURCE_TYPE_MANIFEST", v1, 0);
+                                                                                                                                                            if ( !result )
+                                                                                                                                                            {
+                                                                                                                                                              result = sub_4DF770(1, "machine", v1, 0);
+                                                                                                                                                              if ( !result )
+                                                                                                                                                              {
+                                                                                                                                                                result = sub_4DF770(1, "number_of_sections", v1, 0);
+                                                                                                                                                                if ( !result )
+                                                                                                                                                                {
+                                                                                                                                                                  result = sub_4DF770(1, "timestamp", v1, 0);
+                                                                                                                                                                  if ( !result )
+                                                                                                                                                                  {
+                                                                                                                                                                    result = sub_4DF770(1, "characteristics", v1, 0);
+                                                                                                                                                                    if ( !result )
+                                                                                                                                                                    {
+                                                                                                                                                                      result = sub_4DF770(1, "entry_point", v1, 0);
+                                                                                                                                                                      if ( !result )
+                                                                                                                                                                      {
+                                                                                                                                                                        result = sub_4DF770(1, "image_base", v1, 0);
+                                                                                                                                                                        if ( !result )
+                                                                                                                                                                        {
+                                                                                                                                                                          result = sub_4DF770(7, "version_info", v1, (int)&a1);
+                                                                                                                                                                          if ( !result )
+                                                                                                                                                                          {
+                                                                                                                                                                            result = sub_4DF770(2, "version_info", a1, 0);
+                                                                                                                                                                            if ( !result )
+                                                                                                                                                                            {
+                                                                                                                                                                              result = sub_4DF770(3, "linker_version", v1, (int)&a1);
+                                                                                                                                                                              if ( !result )
+                                                                                                                                                                              {
+                                                                                                                                                                                v3 = a1;
+                                                                                                                                                                                result = sub_4DF770(1, "major", a1, 0);
+                                                                                                                                                                                if ( !result )
+                                                                                                                                                                                {
+                                                                                                                                                                                  result = sub_4DF770(1, "minor", v3, 0);
+                                                                                                                                                                                  if ( !result )
+                                                                                                                                                                                  {
+                                                                                                                                                                                    if ( *(_BYTE *)v3 != 3 )
+                                                                                                                                                                                      _wassert(&off_655E98, L"..\\..\\libyara\\modules\\pe.c", 0x6B2u);
+                                                                                                                                                                                    v4 = *(_DWORD *)(v3 + 4);
+                                                                                                                                                                                    v5 = "linker_version";
+                                                                                                                                                                                    while ( 1 )
+                                                                                                                                                                                    {
+                                                                                                                                                                                      v6 = *(_BYTE *)v4 < (const unsigned __int8)*v5;
+                                                                                                                                                                                      if ( *(_BYTE *)v4 != *v5 )
+                                                                                                                                                                                        break;
+                                                                                                                                                                                      if ( !*(_BYTE *)v4 )
+                                                                                                                                                                                        goto LABEL_97;
+                                                                                                                                                                                      v7 = *(_BYTE *)(v4 + 1);
+                                                                                                                                                                                      v6 = v7 < v5[1];
+                                                                                                                                                                                      if ( v7 != v5[1] )
+                                                                                                                                                                                        break;
+                                                                                                                                                                                      v4 += 2;
+                                                                                                                                                                                      v5 += 2;
+                                                                                                                                                                                      if ( !v7 )
+                                                                                                                                                                                      {
+LABEL_97:
+                                                                                                                                                                                        v8 = 0;
+                                                                                                                                                                                        goto LABEL_99;
+                                                                                                                                                                                      }
+                                                                                                                                                                                    }
+                                                                                                                                                                                    v8 = -v6 | 1;
+LABEL_99:
+                                                                                                                                                                                    if ( v8 )
+                                                                                                                                                                                    {
+                                                                                                                                                                                      v50 = 1714;
+                                                                                                                                                                                      goto LABEL_247;
+                                                                                                                                                                                    }
+                                                                                                                                                                                    result = sub_4DF770(3, "os_version", v1, (int)&a1);
+                                                                                                                                                                                    if ( !result )
+                                                                                                                                                                                    {
+                                                                                                                                                                                      v9 = a1;
+                                                                                                                                                                                      result = sub_4DF770(1, "major", a1, 0);
+                                                                                                                                                                                      if ( !result )
+                                                                                                                                                                                      {
+                                                                                                                                                                                        result = sub_4DF770(1, "minor", v9, 0);
+                                                                                                                                                                                        if ( !result )
+                                                                                                                                                                                        {
+                                                                                                                                                                                          if ( *(_BYTE *)v9 != 3 )
+                                                                                                                                                                                            _wassert(&off_655E98, L"..\\..\\libyara\\modules\\pe.c", 0x6B7u);
+                                                                                                                                                                                          v10 = *(_DWORD *)(v9 + 4);
+                                                                                                                                                                                          v5 = "os_version";
+                                                                                                                                                                                          while ( 1 )
+                                                                                                                                                                                          {
+                                                                                                                                                                                            v11 = *(_BYTE *)v10 < (const unsigned __int8)*v5;
+                                                                                                                                                                                            if ( *(_BYTE *)v10 != *v5 )
+                                                                                                                                                                                              break;
+                                                                                                                                                                                            if ( !*(_BYTE *)v10 )
+                                                                                                                                                                                              goto LABEL_110;
+                                                                                                                                                                                            v12 = *(_BYTE *)(v10 + 1);
+                                                                                                                                                                                            v11 = v12 < v5[1];
+                                                                                                                                                                                            if ( v12 != v5[1] )
+                                                                                                                                                                                              break;
+                                                                                                                                                                                            v10 += 2;
+                                                                                                                                                                                            v5 += 2;
+                                                                                                                                                                                            if ( !v12 )
+                                                                                                                                                                                            {
+LABEL_110:
+                                                                                                                                                                                              v13 = 0;
+                                                                                                                                                                                              goto LABEL_112;
+                                                                                                                                                                                            }
+                                                                                                                                                                                          }
+                                                                                                                                                                                          v13 = -v11 | 1;
+LABEL_112:
+                                                                                                                                                                                          if ( v13 )
+                                                                                                                                                                                          {
+                                                                                                                                                                                            v50 = 1719;
+LABEL_247:
+                                                                                                                                                                                            v49 = sub_5A39F0(v5);
+                                                                                                                                                                                            fprintf((FILE *)(v49 + 64), "%s:%d: unbalanced begin_struct/end_struct\n", "..\\..\\libyara\\modules\\pe.c", v50);
+                                                                                                                                                                                            abort();
+                                                                                                                                                                                          }
+                                                                                                                                                                                          result = sub_4DF770(3, "image_version", v1, (int)&a1);
+                                                                                                                                                                                          if ( !result )
+                                                                                                                                                                                          {
+                                                                                                                                                                                            v14 = a1;
+                                                                                                                                                                                            result = sub_4DF770(1, "major", a1, 0);
+                                                                                                                                                                                            if ( !result )
+                                                                                                                                                                                            {
+                                                                                                                                                                                              result = sub_4DF770(1, "minor", v14, 0);
+                                                                                                                                                                                              if ( !result )
+                                                                                                                                                                                              {
+                                                                                                                                                                                                if ( *(_BYTE *)v14 != 3 )
+                                                                                                                                                                                                  _wassert(&off_655E98, L"..\\..\\libyara\\modules\\pe.c", 0x6BCu);
+                                                                                                                                                                                                v15 = *(_DWORD *)(v14 + 4);
+                                                                                                                                                                                                v5 = "image_version";
+                                                                                                                                                                                                while ( 1 )
+                                                                                                                                                                                                {
+                                                                                                                                                                                                  v16 = *(_BYTE *)v15 < (const unsigned __int8)*v5;
+                                                                                                                                                                                                  if ( *(_BYTE *)v15 != *v5 )
+                                                                                                                                                                                                    break;
+                                                                                                                                                                                                  if ( !*(_BYTE *)v15 )
+                                                                                                                                                                                                    goto LABEL_124;
+                                                                                                                                                                                                  v17 = *(_BYTE *)(v15 + 1);
+                                                                                                                                                                                                  v16 = v17 < v5[1];
+                                                                                                                                                                                                  if ( v17 != v5[1] )
+                                                                                                                                                                                                    break;
+                                                                                                                                                                                                  v15 += 2;
+                                                                                                                                                                                                  v5 += 2;
+                                                                                                                                                                                                  if ( !v17 )
+                                                                                                                                                                                                  {
+LABEL_124:
+                                                                                                                                                                                                    v18 = 0;
+                                                                                                                                                                                                    goto LABEL_126;
+                                                                                                                                                                                                  }
+                                                                                                                                                                                                }
+                                                                                                                                                                                                v18 = -v16 | 1;
+LABEL_126:
+                                                                                                                                                                                                if ( v18 )
+                                                                                                                                                                                                {
+                                                                                                                                                                                                  v50 = 1724;
+                                                                                                                                                                                                  goto LABEL_247;
+                                                                                                                                                                                                }
+                                                                                                                                                                                                result = sub_4DF770(3, "subsystem_version", v1, (int)&a1);
+                                                                                                                                                                                                if ( !result )
+                                                                                                                                                                                                {
+                                                                                                                                                                                                  v19 = a1;
+                                                                                                                                                                                                  result = sub_4DF770(1, "major", a1, 0);
+                                                                                                                                                                                                  if ( !result )
+                                                                                                                                                                                                  {
+                                                                                                                                                                                                    result = sub_4DF770(1, "minor", v19, 0);
+                                                                                                                                                                                                    if ( !result )
+                                                                                                                                                                                                    {
+                                                                                                                                                                                                      if ( *(_BYTE *)v19 != 3 )
+                                                                                                                                                                                                        _wassert(&off_655E98, L"..\\..\\libyara\\modules\\pe.c", 0x6C1u);
+                                                                                                                                                                                                      v20 = *(_DWORD *)(v19 + 4);
+                                                                                                                                                                                                      v5 = "subsystem_version";
+                                                                                                                                                                                                      while ( 1 )
+                                                                                                                                                                                                      {
+                                                                                                                                                                                                        v21 = *(_BYTE *)v20 < (const unsigned __int8)*v5;
+                                                                                                                                                                                                        if ( *(_BYTE *)v20 != *v5 )
+                                                                                                                                                                                                          break;
+                                                                                                                                                                                                        if ( !*(_BYTE *)v20 )
+                                                                                                                                                                                                          goto LABEL_138;
+                                                                                                                                                                                                        v22 = *(_BYTE *)(v20 + 1);
+                                                                                                                                                                                                        v21 = v22 < v5[1];
+                                                                                                                                                                                                        if ( v22 != v5[1] )
+                                                                                                                                                                                                          break;
+                                                                                                                                                                                                        v20 += 2;
+                                                                                                                                                                                                        v5 += 2;
+                                                                                                                                                                                                        if ( !v22 )
+                                                                                                                                                                                                        {
+LABEL_138:
+                                                                                                                                                                                                          v23 = 0;
+                                                                                                                                                                                                          goto LABEL_140;
+                                                                                                                                                                                                        }
+                                                                                                                                                                                                      }
+                                                                                                                                                                                                      v23 = -v21 | 1;
+LABEL_140:
+                                                                                                                                                                                                      if ( v23 )
+                                                                                                                                                                                                      {
+                                                                                                                                                                                                        v50 = 1729;
+                                                                                                                                                                                                        goto LABEL_247;
+                                                                                                                                                                                                      }
+                                                                                                                                                                                                      result = sub_4DF770(1, "subsystem", v1, 0);
+                                                                                                                                                                                                      if ( !result )
+                                                                                                                                                                                                      {
+                                                                                                                                                                                                        result = sub_4DF770(4, "sections", v1, (int)&a1);
+                                                                                                                                                                                                        if ( !result )
+                                                                                                                                                                                                        {
+                                                                                                                                                                                                          result = sub_4DF770(3, "sections", a1, (int)&v51);
+                                                                                                                                                                                                          if ( !result )
+                                                                                                                                                                                                          {
+                                                                                                                                                                                                            v24 = v51;
+                                                                                                                                                                                                            result = sub_4DF770(2, "name", v51, 0);
+                                                                                                                                                                                                            if ( !result )
+                                                                                                                                                                                                            {
+                                                                                                                                                                                                              result = sub_4DF770(1, "characteristics", v24, 0);
+                                                                                                                                                                                                              if ( !result )
+                                                                                                                                                                                                              {
+                                                                                                                                                                                                                result = sub_4DF770(1, "virtual_address", v24, 0);
+                                                                                                                                                                                                                if ( !result )
+                                                                                                                                                                                                                {
+                                                                                                                                                                                                                  result = sub_4DF770(1, "virtual_size", v24, 0);
+                                                                                                                                                                                                                  if ( !result )
+                                                                                                                                                                                                                  {
+                                                                                                                                                                                                                    result = sub_4DF770(1, "raw_data_offset", v24, 0);
+                                                                                                                                                                                                                    if ( !result )
+                                                                                                                                                                                                                    {
+                                                                                                                                                                                                                      result = sub_4DF770(1, "raw_data_size", v24, 0);
+                                                                                                                                                                                                                      if ( !result )
+                                                                                                                                                                                                                      {
+                                                                                                                                                                                                                        if ( *(_BYTE *)v24 != 3 )
+                                                                                                                                                                                                                          _wassert(&off_655E98, L"..\\..\\libyara\\modules\\pe.c", 0x6CCu);
+                                                                                                                                                                                                                        v25 = *(_DWORD *)(v24 + 4);
+                                                                                                                                                                                                                        v5 = "sections";
+                                                                                                                                                                                                                        while ( 1 )
+                                                                                                                                                                                                                        {
+                                                                                                                                                                                                                          v26 = *(_BYTE *)v25 < (const unsigned __int8)*v5;
+                                                                                                                                                                                                                          if ( *(_BYTE *)v25 != *v5 )
+                                                                                                                                                                                                                            break;
+                                                                                                                                                                                                                          if ( !*(_BYTE *)v25 )
+                                                                                                                                                                                                                            goto LABEL_158;
+                                                                                                                                                                                                                          v27 = *(_BYTE *)(v25 + 1);
+                                                                                                                                                                                                                          v26 = v27 < v5[1];
+                                                                                                                                                                                                                          if ( v27 != v5[1] )
+                                                                                                                                                                                                                            break;
+                                                                                                                                                                                                                          v25 += 2;
+                                                                                                                                                                                                                          v5 += 2;
+                                                                                                                                                                                                                          if ( !v27 )
+                                                                                                                                                                                                                          {
+LABEL_158:
+                                                                                                                                                                                                                            v28 = 0;
+                                                                                                                                                                                                                            goto LABEL_160;
+                                                                                                                                                                                                                          }
+                                                                                                                                                                                                                        }
+                                                                                                                                                                                                                        v28 = -v26 | 1;
+LABEL_160:
+                                                                                                                                                                                                                        if ( v28 )
+                                                                                                                                                                                                                        {
+                                                                                                                                                                                                                          v50 = 1740;
+                                                                                                                                                                                                                          goto LABEL_247;
+                                                                                                                                                                                                                        }
+                                                                                                                                                                                                                        result = sub_4DF770(3, "rich_signature", v1, (int)&a1);
+                                                                                                                                                                                                                        if ( !result )
+                                                                                                                                                                                                                        {
+                                                                                                                                                                                                                          v29 = a1;
+                                                                                                                                                                                                                          result = sub_4DF770(1, "offset", a1, 0);
+                                                                                                                                                                                                                          if ( !result )
+                                                                                                                                                                                                                          {
+                                                                                                                                                                                                                            result = sub_4DF770(1, "length", v29, 0);
+                                                                                                                                                                                                                            if ( !result )
+                                                                                                                                                                                                                            {
+                                                                                                                                                                                                                              result = sub_4DF770(1, &off_658DF8, v29, 0);
+                                                                                                                                                                                                                              if ( !result )
+                                                                                                                                                                                                                              {
+                                                                                                                                                                                                                                result = sub_4DF770(2, "raw_data", v29, 0);
+                                                                                                                                                                                                                                if ( !result )
+                                                                                                                                                                                                                                {
+                                                                                                                                                                                                                                  result = sub_4DF770(2, "clear_data", v29, 0);
+                                                                                                                                                                                                                                  if ( !result )
+                                                                                                                                                                                                                                  {
+                                                                                                                                                                                                                                    if ( *(_BYTE *)v29 != 3 )
+                                                                                                                                                                                                                                      _wassert(&off_655E98, L"..\\..\\libyara\\modules\\pe.c", 0x6D4u);
+                                                                                                                                                                                                                                    v30 = *(_DWORD *)(v29 + 4);
+                                                                                                                                                                                                                                    v5 = "rich_signature";
+                                                                                                                                                                                                                                    while ( 1 )
+                                                                                                                                                                                                                                    {
+                                                                                                                                                                                                                                      v31 = *(_BYTE *)v30 < (const unsigned __int8)*v5;
+                                                                                                                                                                                                                                      if ( *(_BYTE *)v30 != *v5 )
+                                                                                                                                                                                                                                        break;
+                                                                                                                                                                                                                                      if ( !*(_BYTE *)v30 )
+                                                                                                                                                                                                                                        goto LABEL_175;
+                                                                                                                                                                                                                                      v32 = *(_BYTE *)(v30 + 1);
+                                                                                                                                                                                                                                      v31 = v32 < v5[1];
+                                                                                                                                                                                                                                      if ( v32 != v5[1] )
+                                                                                                                                                                                                                                        break;
+                                                                                                                                                                                                                                      v30 += 2;
+                                                                                                                                                                                                                                      v5 += 2;
+                                                                                                                                                                                                                                      if ( !v32 )
+                                                                                                                                                                                                                                      {
+LABEL_175:
+                                                                                                                                                                                                                                        v33 = 0;
+                                                                                                                                                                                                                                        goto LABEL_177;
+                                                                                                                                                                                                                                      }
+                                                                                                                                                                                                                                    }
+                                                                                                                                                                                                                                    v33 = -v31 | 1;
+LABEL_177:
+                                                                                                                                                                                                                                    if ( v33 )
+                                                                                                                                                                                                                                    {
+                                                                                                                                                                                                                                      v50 = 1748;
+                                                                                                                                                                                                                                      goto LABEL_247;
+                                                                                                                                                                                                                                    }
+                                                                                                                                                                                                                                    result = sub_4DFDD0("imphash", (int)&byte_6A8FAF, (int)"s", (int)&sub_4E7F50, v1, (int)&a1);
+                                                                                                                                                                                                                                    if ( !result )
+                                                                                                                                                                                                                                    {
+                                                                                                                                                                                                                                      result = sub_4DFDD0("section_index", (int)"s", (int)"i", (int)sub_4ED0E0, v1, (int)&a1);
+                                                                                                                                                                                                                                      if ( !result )
+                                                                                                                                                                                                                                      {
+                                                                                                                                                                                                                                        result = sub_4DFDD0("section_index", (int)"i", (int)"i", (int)sub_4ECF50, v1, (int)&a1);
+                                                                                                                                                                                                                                        if ( !result )
+                                                                                                                                                                                                                                        {
+                                                                                                                                                                                                                                          result = sub_4DFDD0("exports", (int)"s", (int)"i", (int)sub_4E7D40, v1, (int)&a1);
+                                                                                                                                                                                                                                          if ( !result )
+                                                                                                                                                                                                                                          {
+                                                                                                                                                                                                                                            result = sub_4DFDD0("imports", (int)dword_6B5720, (int)"i", (int)sub_4E8230, v1, (int)&a1);
+                                                                                                                                                                                                                                            if ( !result )
+                                                                                                                                                                                                                                            {
+                                                                                                                                                                                                                                              result = sub_4DFDD0("locale", (int)"i", (int)"i", (int)sub_4E8490, v1, (int)&a1);
+                                                                                                                                                                                                                                              if ( !result )
+                                                                                                                                                                                                                                              {
+                                                                                                                                                                                                                                                result = sub_4DFDD0("language", (int)"i", (int)"i", (int)sub_4E8340, v1, (int)&a1);
+                                                                                                                                                                                                                                                if ( !result )
+                                                                                                                                                                                                                                                {
+                                                                                                                                                                                                                                                  result = sub_4DF770(1, "resource_timestamp", v1, 0);
+                                                                                                                                                                                                                                                  if ( !result )
+                                                                                                                                                                                                                                                  {
+                                                                                                                                                                                                                                                    result = sub_4DF770(3, "resource_version", v1, (int)&a1);
+                                                                                                                                                                                                                                                    if ( !result )
+                                                                                                                                                                                                                                                    {
+                                                                                                                                                                                                                                                      v34 = a1;
+                                                                                                                                                                                                                                                      result = sub_4DF770(1, "major", a1, 0);
+                                                                                                                                                                                                                                                      if ( !result )
+                                                                                                                                                                                                                                                      {
+                                                                                                                                                                                                                                                        result = sub_4DF770(1, "minor", v34, 0);
+                                                                                                                                                                                                                                                        if ( !result )
+                                                                                                                                                                                                                                                        {
+                                                                                                                                                                                                                                                          if ( *(_BYTE *)v34 != 3 )
+                                                                                                                                                                                                                                                            _wassert(&off_655E98, L"..\\..\\libyara\\modules\\pe.c", 0x6E5u);
+                                                                                                                                                                                                                                                          v35 = *(_DWORD *)(v34 + 4);
+                                                                                                                                                                                                                                                          v5 = "resource_version";
+                                                                                                                                                                                                                                                          while ( 1 )
+                                                                                                                                                                                                                                                          {
+                                                                                                                                                                                                                                                            v36 = *(_BYTE *)v35 < (const unsigned __int8)*v5;
+                                                                                                                                                                                                                                                            if ( *(_BYTE *)v35 != *v5 )
+                                                                                                                                                                                                                                                              break;
+                                                                                                                                                                                                                                                            if ( !*(_BYTE *)v35 )
+                                                                                                                                                                                                                                                              goto LABEL_197;
+                                                                                                                                                                                                                                                            v37 = *(_BYTE *)(v35 + 1);
+                                                                                                                                                                                                                                                            v36 = v37 < v5[1];
+                                                                                                                                                                                                                                                            if ( v37 != v5[1] )
+                                                                                                                                                                                                                                                              break;
+                                                                                                                                                                                                                                                            v35 += 2;
+                                                                                                                                                                                                                                                            v5 += 2;
+                                                                                                                                                                                                                                                            if ( !v37 )
+                                                                                                                                                                                                                                                            {
+LABEL_197:
+                                                                                                                                                                                                                                                              v38 = 0;
+                                                                                                                                                                                                                                                              goto LABEL_199;
+                                                                                                                                                                                                                                                            }
+                                                                                                                                                                                                                                                          }
+                                                                                                                                                                                                                                                          v38 = -v36 | 1;
+LABEL_199:
+                                                                                                                                                                                                                                                          if ( v38 )
+                                                                                                                                                                                                                                                          {
+                                                                                                                                                                                                                                                            v50 = 1765;
+                                                                                                                                                                                                                                                            goto LABEL_247;
+                                                                                                                                                                                                                                                          }
+                                                                                                                                                                                                                                                          result = sub_4DF770(4, "resources", v1, (int)&a1);
+                                                                                                                                                                                                                                                          if ( !result )
+                                                                                                                                                                                                                                                          {
+                                                                                                                                                                                                                                                            result = sub_4DF770(3, "resources", a1, (int)&v51);
+                                                                                                                                                                                                                                                            if ( !result )
+                                                                                                                                                                                                                                                            {
+                                                                                                                                                                                                                                                              v39 = v51;
+                                                                                                                                                                                                                                                              result = sub_4DF770(1, "offset", v51, 0);
+                                                                                                                                                                                                                                                              if ( !result )
+                                                                                                                                                                                                                                                              {
+                                                                                                                                                                                                                                                                result = sub_4DF770(1, "length", v39, 0);
+                                                                                                                                                                                                                                                                if ( !result )
+                                                                                                                                                                                                                                                                {
+                                                                                                                                                                                                                                                                  result = sub_4DF770(1, "type", v39, 0);
+                                                                                                                                                                                                                                                                  if ( !result )
+                                                                                                                                                                                                                                                                  {
+                                                                                                                                                                                                                                                                    result = sub_4DF770(1, "id", v39, 0);
+                                                                                                                                                                                                                                                                    if ( !result )
+                                                                                                                                                                                                                                                                    {
+                                                                                                                                                                                                                                                                      result = sub_4DF770(1, "language", v39, 0);
+                                                                                                                                                                                                                                                                      if ( !result )
+                                                                                                                                                                                                                                                                      {
+                                                                                                                                                                                                                                                                        result = sub_4DF770(2, "type_string", v39, 0);
+                                                                                                                                                                                                                                                                        if ( !result )
+                                                                                                                                                                                                                                                                        {
+                                                                                                                                                                                                                                                                          result = sub_4DF770(2, "name_string", v39, 0);
+                                                                                                                                                                                                                                                                          if ( !result )
+                                                                                                                                                                                                                                                                          {
+                                                                                                                                                                                                                                                                            result = sub_4DF770(2, "language_string", v39, 0);
+                                                                                                                                                                                                                                                                            if ( !result )
+                                                                                                                                                                                                                                                                            {
+                                                                                                                                                                                                                                                                              if ( *(_BYTE *)v39 != 3 )
+                                                                                                                                                                                                                                                                                _wassert(&off_655E98, L"..\\..\\libyara\\modules\\pe.c", 0x6EFu);
+                                                                                                                                                                                                                                                                              v40 = *(_DWORD *)(v39 + 4);
+                                                                                                                                                                                                                                                                              v5 = "resources";
+                                                                                                                                                                                                                                                                              while ( 1 )
+                                                                                                                                                                                                                                                                              {
+                                                                                                                                                                                                                                                                                v41 = *(_BYTE *)v40 < (const unsigned __int8)*v5;
+                                                                                                                                                                                                                                                                                if ( *(_BYTE *)v40 != *v5 )
+                                                                                                                                                                                                                                                                                  break;
+                                                                                                                                                                                                                                                                                if ( !*(_BYTE *)v40 )
+                                                                                                                                                                                                                                                                                  goto LABEL_218;
+                                                                                                                                                                                                                                                                                v42 = *(_BYTE *)(v40 + 1);
+                                                                                                                                                                                                                                                                                v41 = v42 < v5[1];
+                                                                                                                                                                                                                                                                                if ( v42 != v5[1] )
+                                                                                                                                                                                                                                                                                  break;
+                                                                                                                                                                                                                                                                                v40 += 2;
+                                                                                                                                                                                                                                                                                v5 += 2;
+                                                                                                                                                                                                                                                                                if ( !v42 )
+                                                                                                                                                                                                                                                                                {
+LABEL_218:
+                                                                                                                                                                                                                                                                                  v43 = 0;
+                                                                                                                                                                                                                                                                                  goto LABEL_220;
+                                                                                                                                                                                                                                                                                }
+                                                                                                                                                                                                                                                                              }
+                                                                                                                                                                                                                                                                              v43 = -v41 | 1;
+LABEL_220:
+                                                                                                                                                                                                                                                                              if ( v43 )
+                                                                                                                                                                                                                                                                              {
+                                                                                                                                                                                                                                                                                v50 = 1775;
+                                                                                                                                                                                                                                                                                goto LABEL_247;
+                                                                                                                                                                                                                                                                              }
+                                                                                                                                                                                                                                                                              result = sub_4DF770(1, "number_of_resources", v1, 0);
+                                                                                                                                                                                                                                                                              if ( !result )
+                                                                                                                                                                                                                                                                              {
+                                                                                                                                                                                                                                                                                result = sub_4DF770(4, "signatures", v1, (int)&a1);
+                                                                                                                                                                                                                                                                                if ( !result )
+                                                                                                                                                                                                                                                                                {
+                                                                                                                                                                                                                                                                                  result = sub_4DF770(3, "signatures", a1, (int)&v51);
+                                                                                                                                                                                                                                                                                  if ( !result )
+                                                                                                                                                                                                                                                                                  {
+                                                                                                                                                                                                                                                                                    v44 = v51;
+                                                                                                                                                                                                                                                                                    result = sub_4DF770(2, "issuer", v51, 0);
+                                                                                                                                                                                                                                                                                    if ( !result )
+                                                                                                                                                                                                                                                                                    {
+                                                                                                                                                                                                                                                                                      result = sub_4DF770(2, "subject", v44, 0);
+                                                                                                                                                                                                                                                                                      if ( !result )
+                                                                                                                                                                                                                                                                                      {
+                                                                                                                                                                                                                                                                                        result = sub_4DF770(1, "version", v44, 0);
+                                                                                                                                                                                                                                                                                        if ( !result )
+                                                                                                                                                                                                                                                                                        {
+                                                                                                                                                                                                                                                                                          result = sub_4DF770(2, "algorithm", v44, 0);
+                                                                                                                                                                                                                                                                                          if ( !result )
+                                                                                                                                                                                                                                                                                          {
+                                                                                                                                                                                                                                                                                            result = sub_4DF770(2, "serial", v44, 0);
+                                                                                                                                                                                                                                                                                            if ( !result )
+                                                                                                                                                                                                                                                                                            {
+                                                                                                                                                                                                                                                                                              result = sub_4DF770(1, "not_before", v44, 0);
+                                                                                                                                                                                                                                                                                              if ( !result )
+                                                                                                                                                                                                                                                                                              {
+                                                                                                                                                                                                                                                                                                result = sub_4DF770(1, "not_after", v44, 0);
+                                                                                                                                                                                                                                                                                                if ( !result )
+                                                                                                                                                                                                                                                                                                {
+                                                                                                                                                                                                                                                                                                  result = sub_4DFDD0("valid_on", (int)"i", (int)"i", (int)sub_4ED3C0, v44, (int)&a1);
+                                                                                                                                                                                                                                                                                                  if ( !result )
+                                                                                                                                                                                                                                                                                                  {
+                                                                                                                                                                                                                                                                                                    if ( *(_BYTE *)v44 != 3 )
+                                                                                                                                                                                                                                                                                                      _wassert(&off_655E98, L"..\\..\\libyara\\modules\\pe.c", 0x6FCu);
+                                                                                                                                                                                                                                                                                                    v45 = *(_DWORD *)(v44 + 4);
+                                                                                                                                                                                                                                                                                                    v5 = "signatures";
+                                                                                                                                                                                                                                                                                                    while ( 1 )
+                                                                                                                                                                                                                                                                                                    {
+                                                                                                                                                                                                                                                                                                      v46 = *(_BYTE *)v45 < (const unsigned __int8)*v5;
+                                                                                                                                                                                                                                                                                                      if ( *(_BYTE *)v45 != *v5 )
+                                                                                                                                                                                                                                                                                                        break;
+                                                                                                                                                                                                                                                                                                      if ( !*(_BYTE *)v45 )
+                                                                                                                                                                                                                                                                                                        goto LABEL_240;
+                                                                                                                                                                                                                                                                                                      v47 = *(_BYTE *)(v45 + 1);
+                                                                                                                                                                                                                                                                                                      v46 = v47 < v5[1];
+                                                                                                                                                                                                                                                                                                      if ( v47 != v5[1] )
+                                                                                                                                                                                                                                                                                                        break;
+                                                                                                                                                                                                                                                                                                      v45 += 2;
+                                                                                                                                                                                                                                                                                                      v5 += 2;
+                                                                                                                                                                                                                                                                                                      if ( !v47 )
+                                                                                                                                                                                                                                                                                                      {
+LABEL_240:
+                                                                                                                                                                                                                                                                                                        v48 = 0;
+                                                                                                                                                                                                                                                                                                        goto LABEL_242;
+                                                                                                                                                                                                                                                                                                      }
+                                                                                                                                                                                                                                                                                                    }
+                                                                                                                                                                                                                                                                                                    v48 = -v46 | 1;
+LABEL_242:
+                                                                                                                                                                                                                                                                                                    if ( v48 )
+                                                                                                                                                                                                                                                                                                    {
+                                                                                                                                                                                                                                                                                                      v50 = 1788;
+                                                                                                                                                                                                                                                                                                      goto LABEL_247;
+                                                                                                                                                                                                                                                                                                    }
+                                                                                                                                                                                                                                                                                                    result = sub_4DF770(1, "number_of_signatures", v1, 0);
+                                                                                                                                                                                                                                                                                                  }
+                                                                                                                                                                                                                                                                                                }
+                                                                                                                                                                                                                                                                                              }
+                                                                                                                                                                                                                                                                                            }
+                                                                                                                                                                                                                                                                                          }
+                                                                                                                                                                                                                                                                                        }
+                                                                                                                                                                                                                                                                                      }
+                                                                                                                                                                                                                                                                                    }
+                                                                                                                                                                                                                                                                                  }
+                                                                                                                                                                                                                                                                                }
+                                                                                                                                                                                                                                                                              }
+                                                                                                                                                                                                                                                                            }
+                                                                                                                                                                                                                                                                          }
+                                                                                                                                                                                                                                                                        }
+                                                                                                                                                                                                                                                                      }
+                                                                                                                                                                                                                                                                    }
+                                                                                                                                                                                                                                                                  }
+                                                                                                                                                                                                                                                                }
+                                                                                                                                                                                                                                                              }
+                                                                                                                                                                                                                                                            }
+                                                                                                                                                                                                                                                          }
+                                                                                                                                                                                                                                                        }
+                                                                                                                                                                                                                                                      }
+                                                                                                                                                                                                                                                    }
+                                                                                                                                                                                                                                                  }
+                                                                                                                                                                                                                                                }
+                                                                                                                                                                                                                                              }
+                                                                                                                                                                                                                                            }
+                                                                                                                                                                                                                                          }
+                                                                                                                                                                                                                                        }
+                                                                                                                                                                                                                                      }
+                                                                                                                                                                                                                                    }
+                                                                                                                                                                                                                                  }
+                                                                                                                                                                                                                                }
+                                                                                                                                                                                                                              }
+                                                                                                                                                                                                                            }
+                                                                                                                                                                                                                          }
+                                                                                                                                                                                                                        }
+                                                                                                                                                                                                                      }
+                                                                                                                                                                                                                    }
+                                                                                                                                                                                                                  }
+                                                                                                                                                                                                                }
+                                                                                                                                                                                                              }
+                                                                                                                                                                                                            }
+                                                                                                                                                                                                          }
+                                                                                                                                                                                                        }
+                                                                                                                                                                                                      }
+                                                                                                                                                                                                    }
+                                                                                                                                                                                                  }
+                                                                                                                                                                                                }
+                                                                                                                                                                                              }
+                                                                                                                                                                                            }
+                                                                                                                                                                                          }
+                                                                                                                                                                                        }
+                                                                                                                                                                                      }
+                                                                                                                                                                                    }
+                                                                                                                                                                                  }
+                                                                                                                                                                                }
+                                                                                                                                                                              }
+                                                                                                                                                                            }
+                                                                                                                                                                          }
+                                                                                                                                                                        }
+                                                                                                                                                                      }
+                                                                                                                                                                    }
+                                                                                                                                                                  }
+                                                                                                                                                                }
+                                                                                                                                                              }
+                                                                                                                                                            }
+                                                                                                                                                          }
+                                                                                                                                                        }
+                                                                                                                                                      }
+                                                                                                                                                    }
+                                                                                                                                                  }
+                                                                                                                                                }
+                                                                                                                                              }
+                                                                                                                                            }
+                                                                                                                                          }
+                                                                                                                                        }
+                                                                                                                                      }
+                                                                                                                                    }
+                                                                                                                                  }
+                                                                                                                                }
+                                                                                                                              }
+                                                                                                                            }
+                                                                                                                          }
+                                                                                                                        }
+                                                                                                                      }
+                                                                                                                    }
+                                                                                                                  }
+                                                                                                                }
+                                                                                                              }
+                                                                                                            }
+                                                                                                          }
+                                                                                                        }
+                                                                                                      }
+                                                                                                    }
+                                                                                                  }
+                                                                                                }
+                                                                                              }
+                                                                                            }
+                                                                                          }
+                                                                                        }
+                                                                                      }
+                                                                                    }
+                                                                                  }
+                                                                                }
+                                                                              }
+                                                                            }
+                                                                          }
+                                                                        }
+                                                                      }
+                                                                    }
+                                                                  }
+                                                                }
+                                                              }
+                                                            }
+                                                          }
+                                                        }
+                                                      }
+                                                    }
+                                                  }
+                                                }
+                                              }
+                                            }
+                                          }
+                                        }
+                                      }
+                                    }
+                                  }
+                                }
+                              }
+                            }
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+  return result;
+}
+
 
 /**
  * module_load
