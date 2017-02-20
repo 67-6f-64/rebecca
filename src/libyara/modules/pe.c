@@ -8,7 +8,10 @@
  
 /**
  * begin_declarations;
- * creates structures
+ *
+ * begin_struct / begin_struct_array
+ * declare_function / declare_integer / declare_string
+ * end_struct / end_struct_array
  */
 int __cdecl sub_4EA440(int a1)
 {
