@@ -8,7 +8,118 @@
 
 
 /**
- * uint8_t* parse_resource_name
+ * _pe_iterate_resources
+ *
+ * @param PE* pe,
+ * @param PIMAGE_RESOURCE_DIRECTORY resource_dir,
+ * @param uint8_t* rsrc_data,
+ * @param int rsrc_tree_level,
+ * @param int* type,
+ * @param int* id,
+ * @param int* language,
+ * @param uint8_t* type_string,
+ * @param uint8_t* name_string,
+ * @param uint8_t* lang_string,
+ * @param RESOURCE_CALLBACK_FUNC callback,
+ * @param void* callback_data
+ * @return result or RESOURCE_ITERATOR_ABORTED
+ */
+signed int __cdecl sub_4E7BB0(int a1, int a2, int a3, signed int a4, _DWORD *a5, _DWORD *a6, _DWORD *a7, _BYTE *a8, _BYTE *a9, _BYTE *a10, int (__cdecl *a11)(int, _DWORD, _DWORD, _DWORD, _BYTE *, _BYTE *, _BYTE *, int), int a12)
+{
+  int v12; // eax@2
+  int v13; // ecx@3
+  int v14; // esi@4
+  signed int v15; // ecx@6
+  int v16; // edx@13
+  int v17; // edx@15
+  int v18; // edx@16
+  bool v19; // zf@17
+  int v20; // edx@18
+  signed int result; // eax@24
+  int v22; // [sp+4h] [bp-Ch]@4
+  int v23; // [sp+Ch] [bp-4h]@1
+  int v24; // [sp+1Ch] [bp+Ch]@4
+
+  v23 = 0;
+  if ( *(_DWORD *)a2
+    || (v12 = *(_WORD *)(a2 + 12), (unsigned __int16)v12 > 0x8000u)
+    || (v13 = *(_WORD *)(a2 + 14), (unsigned __int16)v13 > 0x8000u) )
+  {
+    result = 0;
+  }
+  else
+  {
+    v14 = a2 + 16;
+    v22 = v12 + v13;
+    v24 = 0;
+    if ( v12 + v13 > 0 )
+    {
+      while ( 1 )
+      {
+        if ( v14 + 8 > (unsigned int)(*(_DWORD *)(a1 + 4) + *(_DWORD *)a1) )
+          goto LABEL_24;
+        v15 = a4;
+        if ( !a4 )
+        {
+          *a5 = *(_DWORD *)v14;
+          a8 = sub_4EA3F0(a1, a3, (_DWORD *)v14);
+          goto LABEL_12;
+        }
+        if ( a4 == 1 )
+          break;
+        if ( a4 == 2 )
+        {
+          *a7 = *(_DWORD *)v14;
+          a10 = sub_4EA3F0(a1, a3, (_DWORD *)v14);
+LABEL_12:
+          v15 = a4;
+        }
+        v16 = *(_DWORD *)(v14 + 4);
+        if ( v16 >= 0 || v15 >= 2 )
+        {
+          v20 = a3 + (v16 & 0x7FFFFFFF);
+          if ( v20 + 16 > (unsigned int)(*(_DWORD *)(a1 + 4) + *(_DWORD *)a1) )
+          {
+            v18 = v23;
+          }
+          else
+          {
+            v18 = a11(v20, *a5, *a6, *a7, a8, a9, a10, a12);
+            v23 = v18;
+          }
+        }
+        else
+        {
+          v17 = a3 + (v16 & 0x7FFFFFFF);
+          if ( v17 + 16 > (unsigned int)(*(_DWORD *)(a1 + 4) + *(_DWORD *)a1) )
+          {
+            v19 = v23 == 1;
+            goto LABEL_22;
+          }
+          v18 = sub_4E7BB0(a1, v17, a3, a4 + 1, a5, a6, a7, a8, a9, a10, a11, a12);
+          v23 = v18;
+        }
+        v19 = v18 == 1;
+LABEL_22:
+        if ( v19 )
+          return 1;
+        v14 += 8;
+        if ( ++v24 >= v22 )
+          goto LABEL_24;
+      }
+      *a6 = *(_DWORD *)v14;
+      a9 = sub_4EA3F0(a1, a3, (_DWORD *)v14);
+      goto LABEL_12;
+    }
+LABEL_24:
+    result = 0;
+  }
+  return result;
+}
+
+
+/**
+ * parse_resource_name
  * 
  * @param PE* pe
  * @param uint8_t* rsrc_data
