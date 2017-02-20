@@ -1,0 +1,13 @@
+A good way to check unpack of blackcipher is to do run bat with. Works with all blackcipher apps but not game.
+
+start blackcipher.aes /showinstance
+
+if (it shows then)
+  winlic is there
+else if (error)
+  you goofed the unpack
+else 
+   nothing then no winlic
+
+finally
+  you can unpack the huge as fuck vm junk code
