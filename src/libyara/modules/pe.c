@@ -6,6 +6,53 @@
  * @verison (2/20/2017)
  */
  
+
+/**
+ * pe_iterate_resources
+ * @param PE* pe
+ * @param RESOURCE_CALLBACK_FUNC callback
+ * @param void* callback_data
+ * @return boolean
+ */
+signed int __cdecl sub_4EBF90(int a1, int a2, int a3)
+{
+  int v3; // eax@1
+  int *v4; // eax@2
+  int v5; // eax@4
+  unsigned __int64 v6; // rax@5
+  int v7; // ebx@5
+  int v8; // esi@7
+  signed int result; // eax@7
+  int v10; // [sp+8h] [bp-Ch]@1
+  int v11; // [sp+Ch] [bp-8h]@1
+  int v12; // [sp+10h] [bp-4h]@1
+
+  v3 = *(_DWORD *)(a1 + 8);
+  v10 = -1;
+  v11 = -1;
+  v12 = -1;
+  if ( *(_WORD *)(v3 + 24) == 523 )
+    v4 = (int *)(v3 + 152);
+  else
+    v4 = (int *)(v3 + 136);
+  v5 = *v4;
+  if ( v5 && (LODWORD(v6) = sub_4ECE60(a1, v5, 0), v7 = v6, v6) && v6 < *(_DWORD *)(a1 + 4) )
+  {
+    v8 = v6 + *(_DWORD *)a1;
+    sub_4E0180(*(_DWORD *)(v8 + 4), 0, *(_DWORD *)(a1 + 12), "resource_timestamp");
+    sub_4E0180(*(_WORD *)(v8 + 8), 0, *(_DWORD *)(a1 + 12), "resource_version.major");
+    sub_4E0180(*(_WORD *)(v8 + 10), 0, *(_DWORD *)(a1 + 12), "resource_version.minor");
+    sub_4E7BB0(a1, v8, v7 + *(_DWORD *)a1, 0, &v10, &v11, &v12, 0, 0, 0, a2, a3);
+    result = 1;
+  }
+  else
+  {
+    result = 0;
+  }
+  return result;
+}
+
+
 /**
  * pe_parse_certificates
  * @param PE* pe
