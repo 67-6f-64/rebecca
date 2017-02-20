@@ -5,7 +5,45 @@
  * @author five (i.f-ve@ya.ru)
  * @verison (2/20/2017)
  */
- 
+
+
+/**
+ * uint8_t* parse_resource_name
+ * 
+ * @param PE* pe
+ * @param uint8_t* rsrc_data
+ * @param PIMAGE_RESOURCE_DIRECTORY_ENTRY entry
+ * @return null or rsrc_str_ptr
+ */
+_BYTE *__cdecl sub_4EA3F0(int a1, int a2, _DWORD *a3)
+{
+  _BYTE *v3; // edx@2
+  unsigned int v4; // esi@2
+  _BYTE *result; // eax@3
+
+  if ( *a3 >= 0 )
+  {
+    result = 0;
+  }
+  else
+  {
+    v3 = (_BYTE *)(a2 + (*a3 & 0x7FFFFFFF));
+    v4 = *(_DWORD *)a1 + *(_DWORD *)(a1 + 4);
+    if ( (unsigned int)(v3 + 2) <= v4 )
+    {
+      if ( (unsigned int)&v3[*v3 + 2] > v4 )
+        v3 = 0;
+      result = v3;
+    }
+    else
+    {
+      result = 0;
+    }
+  }
+  return result;
+}
+
+
 /**
  * begin_declarations;
  *
