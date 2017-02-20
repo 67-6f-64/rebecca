@@ -7,8 +7,66 @@
  */
  
 
+/** 
+ * pe_collect_resources
+ *
+ * @param PIMAGE_RESOURCE_DATA_ENTRY rsrc_data
+ * @param int rsrc_type
+ * @param int rsrc_id
+ * @param int rsrc_language
+ * @param uint8_t* type_string
+ * @param uint8_t* name_string
+ * @param uint8_t* lang_string
+ * @param PE* pe
+ * @return RESOURCE_CALLBACK_CONTINUE
+ */
+int __cdecl sub_4EBD00(int a1, int a2, int a3, int a4, int a5, int a6, int a7, int a8)
+{
+  int v8; // eax@1
+  int v9; // ST24_4@3
+  int v10; // ST10_4@3
+  int v12; // [sp-4h] [bp-Ch]@3
+
+  v8 = sub_4ECE60(a8, *(_DWORD *)a1, 0);
+  if ( v8 && v8 + *(_DWORD *)(a1 + 4) <= (unsigned int)(*(_DWORD *)a8 + *(_DWORD *)(a8 + 4)) )
+  {
+    v9 = *(_DWORD *)(a8 + 20);
+    sub_4E0180(v8, 0, *(_DWORD *)(a8 + 12), "resources[%i].offset");
+    v10 = *(_DWORD *)(a8 + 20);
+    sub_4E0180(*(_DWORD *)(a1 + 4), 0, *(_DWORD *)(a8 + 12), "resources[%i].length");
+    v12 = *(_DWORD *)(a8 + 20);
+    if ( a5 )
+      sub_4E01F0((void *)(a5 + 2), 2 * *(_BYTE *)a5, *(_DWORD *)(a8 + 12), (int)"resources[%i].type_string", v12);
+    else
+      sub_4E0180(a2, (unsigned __int64)a2 >> 32, *(_DWORD *)(a8 + 12), "resources[%i].type");
+    if ( a6 )
+      sub_4E01F0(
+        (void *)(a6 + 2),
+        2 * *(_BYTE *)a6,
+        *(_DWORD *)(a8 + 12),
+        (int)"resources[%i].name_string",
+        *(_DWORD *)(a8 + 20));
+    else
+      sub_4E0180(a3, (unsigned __int64)a3 >> 32, *(_DWORD *)(a8 + 12), "resources[%i].id");
+    if ( a7 )
+      sub_4E01F0(
+        (void *)(a7 + 2),
+        2 * *(_BYTE *)a7,
+        *(_DWORD *)(a8 + 12),
+        (int)"resources[%i].language_string",
+        *(_DWORD *)(a8 + 20));
+    else
+      sub_4E0180(a4, (unsigned __int64)a4 >> 32, *(_DWORD *)(a8 + 12), "resources[%i].language");
+    if ( a2 == 16 )
+      sub_4ECC70(a1, a8);
+    ++*(_DWORD *)(a8 + 20);
+  }
+  return 0;
+}
+
 /**
  * pe_iterate_resources
+ *
  * @param PE* pe
  * @param RESOURCE_CALLBACK_FUNC callback
  * @param void* callback_data
@@ -55,6 +113,7 @@ signed int __cdecl sub_4EBF90(int a1, int a2, int a3)
 
 /**
  * pe_parse_certificates
+ *
  * @param PE* pe
  * @return null
  */
