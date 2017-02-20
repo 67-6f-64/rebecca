@@ -9,6 +9,7 @@
 
 /**
  * module_load
+ *
  * @param YR_SCAN_CONTEXT* context
  * @param YR_OBJECT* module_object
  * @param void* module_data
@@ -102,7 +103,6 @@ signed int __cdecl sub_4EB690(int a1, int a2)
   sub_4E0180(23, 0, a2, "RESOURCE_TYPE_HTML");
   sub_4E0180(24, 0, a2, "RESOURCE_TYPE_MANIFEST");
 
-  // unknown
   v2 = *(_DWORD *)(a1 + 24);
   if ( v2 )
   {
@@ -136,6 +136,55 @@ signed int __cdecl sub_4EB690(int a1, int a2)
   }
   return 0;
 }
+
+
+/** 
+ * module_unload
+ *
+ * @param PIMAGE_RESOURCE_DATA_ENTRY rsrc_data
+ * @param YR_OBJECT* module_object
+ * @return ERROR_SUCCESS
+ */
+int __cdecl sub_4EBCA0(int a1)
+{
+  int v1; // ebx@1
+  int v2; // edi@2
+  int v3; // eax@3
+  int v4; // esi@4
+  int v5; // esi@5
+
+  v1 = *(_DWORD *)(a1 + 8);
+  if ( v1 )
+  {
+    v2 = *(_DWORD *)(v1 + 16);
+    if ( v2 )
+    {
+      do
+      {
+        v3 = *(_DWORD *)(v2 + 4);
+        if ( v3 )
+        {
+          do
+          {
+            v4 = *(_DWORD *)(v3 + 4);
+            sub_4DDF10((LPVOID)v3);
+            v3 = v4;
+          }
+          while ( v4 );
+        }
+        v5 = *(_DWORD *)(v2 + 8);
+        sub_4DDF10((LPVOID)v2);
+        v2 = v5;
+      }
+      while ( v5 );
+    }
+    sub_4DDF10((LPVOID)v1);
+  }
+  return 0;
+}
+
+
+
 
 /** 
  * pe_collect_resources
