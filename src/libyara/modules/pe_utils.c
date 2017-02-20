@@ -13,6 +13,7 @@
  *
  * @param char *dll
  * @param uint16_t ord
+ * @return char* yr_strdup(name)
  */
 _BYTE *__cdecl sub_4E85E0(char *a1, __int16 a2)
 {
