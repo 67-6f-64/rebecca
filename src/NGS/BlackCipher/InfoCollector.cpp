@@ -43,3 +43,30 @@ int sub_64FE50()
   return atexit(sub_6512A0);
 }
 
+
+
+/**
+ * unlock or handle error on log files 
+ *
+ */
+int __cdecl sub_5A3E82(int a1, FILE *File)
+{
+  int result; // eax@2
+  int v3; // edi@3
+
+  if ( File )
+  {
+    _lock_file((unsigned int)File);
+    v3 = _ungetc_nolock(a1, File);
+    _unlock_file(File);
+    result = v3;
+  }
+  else
+  {
+    *_errno() = 22;
+    _invalid_parameter_noinfo();
+    result = -1;
+  }
+  return result;
+}
+
