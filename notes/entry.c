@@ -15,8 +15,8 @@
  *   along with rebecca.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-oep
+// oep
 5A5C8C
 
-oep jmp to winmain
+// oep jmp to winmain
 5A5B15 
