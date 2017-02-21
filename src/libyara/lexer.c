@@ -24,6 +24,24 @@
  */
 
 
+
+
+/** 
+ * yy_fatal_error
+ *
+ * @param yyconst char* msg
+ * @param yyscan_t yyscanner
+ */
+void __thiscall __noreturn sub_4E1CF0(void *this, int a2)
+{
+  int v2; // eax@1
+
+  v2 = sub_5A39F0(this);
+  fprintf((FILE *)(v2 + 64), "%s\n", a2);
+  exit_0(2);
+}
+
+
 /** 
  * yara_yyset_lineno 
  *
