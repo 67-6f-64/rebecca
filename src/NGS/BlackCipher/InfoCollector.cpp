@@ -87,8 +87,48 @@ signed int __thiscall sub_42ED00(int this, signed int a2)
   return result;
 }
 
+
+
 /**
- * unlock or handle error on log files 
+ * lock if file write stream unlock and error if not
+ *
+ */
+signed int __cdecl sub_5A7D1C(unsigned int a1)
+{
+  signed int result; // eax@2
+  int v2; // esi@5
+  int *v3; // ecx@5
+
+  if ( a1 )
+  {
+    _lock_file(a1);
+    *(_DWORD *)(a1 + 12) &= 0xFFFFFFCF;
+    if ( sub_5AAB3C(a1) == -1 || sub_5AAB3C(a1) == -2 )
+    {
+      v3 = dword_6E28A8;
+    }
+    else
+    {
+      v2 = sub_5AAB3C(a1) >> 5;
+      v3 = (int *)(dword_6FE8B0[v2] + ((sub_5AAB3C(a1) & 0x1F) << 6));
+    }
+    *((_BYTE *)v3 + 4) &= 0xFDu;
+    _unlock_file(a1);
+    result = 0;
+  }
+  else
+  {
+    *_errno() = 22;
+    _invalid_parameter_noinfo();
+    result = 22;
+  }
+  return result;
+}
+
+
+
+/**
+ * unlock and handle error on log files 
  *
  */
 int __cdecl sub_5A3E82(int a1, FILE *File)
