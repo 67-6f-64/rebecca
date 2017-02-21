@@ -44,6 +44,48 @@ int sub_64FE50()
 }
 
 
+signed int __thiscall sub_42ED00(int this, signed int a2)
+{
+  signed int result; // eax@8
+  signed int v3; // [sp+30h] [bp-18h]@6
+  int v4; // [sp+40h] [bp-8h]@1
+
+  v4 = this;
+  if ( **(_DWORD **)(this + 28)
+    && **(_DWORD **)(this + 12) < **(_DWORD **)(this + 28)
+    && (-1 == a2 || *(_BYTE *)(**(_DWORD **)(this + 28) - 1) == a2) )
+  {
+    ++**(_DWORD **)(this + 44);
+    --**(_DWORD **)(this + 28);
+    if ( a2 == -1 )
+      v3 = 0;
+    else
+      v3 = a2;
+    result = v3;
+  }
+  else if ( !*(_DWORD *)(this + 80) || -1 == a2 )
+  {
+    result = -1;
+  }
+  else if ( *(_DWORD *)(this + 64) || sub_5A3E82((unsigned __int8)a2, *(FILE **)(this + 80)) == -1 )
+  {
+    if ( **(_DWORD **)(v4 + 28) == v4 + 68 )
+    {
+      result = -1;
+    }
+    else
+    {
+      *(_BYTE *)(v4 + 68) = a2;
+      sub_4302D0(v4);
+      result = a2;
+    }
+  }
+  else
+  {
+    result = a2;
+  }
+  return result;
+}
 
 /**
  * unlock or handle error on log files 
