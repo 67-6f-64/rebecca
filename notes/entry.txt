@@ -1,5 +1,0 @@
-oep
-5A5C8C
-
-oep jmp to winmain
-5A5B15 
