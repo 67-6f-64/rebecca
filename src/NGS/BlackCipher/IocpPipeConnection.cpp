@@ -24,7 +24,7 @@
 
 
 /**
- *
+ * cpu wait time check
  */
 BOOL __thiscall sub_49F8B0(int this, DWORD dwMilliseconds)
 {
@@ -32,9 +32,8 @@ BOOL __thiscall sub_49F8B0(int this, DWORD dwMilliseconds)
 }
 
 
-
 /**
- *
+ * handle wait
  */
 int __thiscall sub_438650(int this)
 {
