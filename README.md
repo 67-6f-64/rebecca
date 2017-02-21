@@ -12,7 +12,7 @@ The goal of rebecca is to look at how BlackCipher functions. This is an opened s
 
 About
 ===
-Is the new anti hack security application developed by Nexon. After, ditching HackShield, Nexon has been looking at following Webzen's model of publishing XignCode. Nexon decided to make their own version, Nexon Game Security. NGS, or better known as BlackCipher however, like XignCode, is a threat to personal privacy while gaming. BlackCipher while running, can be seen scanning, logging, and sending notes about anything you are doing on your computer to Nexon's servers. It will log ip addresses, workgroups, windows versions, passwords, network credentials, hardware, hosts, libraries, current tabs in browsers, windows dialog, files, and more.
+BlackCipher is the new anti hack security application developed by Nexon. After, ditching HackShield, Nexon has been looking at following Webzen's model of publishing XignCode. Nexon decided to make their own version, Nexon Game Security. NGS, or better known as BlackCipher however, like XignCode, is a threat to personal privacy while gaming. BlackCipher while running, can be seen scanning, logging, and sending notes about anything you are doing on your computer to Nexon's servers. It will log ip addresses, workgroups, windows versions, passwords, network credentials, hardware, hosts, libraries, current tabs in browsers, windows dialog, files, and more.
 
 An intrusive logging system is however a bad idea. BlackCipher uses Crypto++'s RSA to encrypt files and communications. Hijacking a target application with Crypto++ RSA can be seen in my other project [captain-hook](https://github.com/f-ve/captain-hook). The dangers of this security is stealing logs and data collected by BlackCipher. It is possible for malicious threat groups in the hacking and gaming communities to start appearing and terrorizing the communities. Popular sites like (gamersoul.com, gamekiller.net) could gather a large amount of information about clients computers in a illegal manner to gain additional profits from users in the game.
 
@@ -21,4 +21,6 @@ An intrusive logging system is however a bad idea. BlackCipher uses Crypto++'s R
 ![](https://i.imgur.com/MZ5Guce.png)
 
 ![](https://i.imgur.com/6yJZ6L9.png)
+
+
 
