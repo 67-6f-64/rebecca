@@ -18,7 +18,7 @@ An intrusive logging system is however a bad idea. BlackCipher uses Crypto++'s R
 
 ![](https://i.imgur.com/k1gMuHb.png)
 
-![](https://i.imgur.com/Eevka8t.png)
+![](https://i.imgur.com/MZ5Guce.png)
 
-![](https://i.imgur.com/VfiyO9O.png)
+![](https://i.imgur.com/6yJZ6L9.png)
 
