@@ -24,6 +24,42 @@
  */
 
 
+/** 
+ * yara_yyset_lineno 
+ *
+ * @param int _line_number line number
+ * @param yyscan_t yyscanner The scanner object.
+ */
+int __cdecl sub_4E1C40(const char *a1, int *a2)
+{
+  int result; // eax@2
+  _DWORD *v3; // esi@3
+  int v4; // ecx@3
+  int v5; // ecx@4
+  void *v6; // [sp+Ch] [bp-4h]@3
+
+  *a2 = 0;
+  if ( _setjmp3(a2 + 5, 0) )
+  {
+    result = *a2;
+  }
+  else
+  {
+    sub_4E6F70(&v6);
+    v3 = v6;
+    *((_DWORD *)v6 + 19) = 1;
+    *v3 = a2;
+    sub_4E0510(a1, strlen(a1), v3);
+    v4 = v3[5];
+    if ( !v4 || (v5 = *(_DWORD *)(v4 + 4 * v3[3])) == 0 )
+      sub_4E1CF0("yara_yyset_lineno called with no buffer");
+    *(_DWORD *)(v5 + 32) = 1;
+    sub_4F1120((int)v3, (int)a2);
+    sub_4E6EA0(v3);
+    result = *a2;
+  }
+  return result;
+}
 
 /**
  * yara_yy_scan_buffer
